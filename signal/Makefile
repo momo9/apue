@@ -28,6 +28,14 @@ zombie.out: $(ZOBJ)
 zombie.o: zombie.c
 	$(CC) -c zombie.c $(FLAG)
 
+.PHONY: syn
+SYN_OBJ = syn.o ../tool.o
+syn: syn.out
+syn.out: $(SYN_OBJ)
+	$(CC) -o syn.out $(SYN_OBJ) $(FLAG)
+syn.o: syn.c
+	$(CC) -c syn.c $(FLAG)
+
 .PHONY: clean
 clean:
 	-rm *.o *.out
