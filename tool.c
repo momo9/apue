@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 void err(char* msg) {
-    fputs(msg, stderr);
-    fputs("\n", stderr);
+    perror(msg);
     exit(EXIT_FAILURE);
 }
